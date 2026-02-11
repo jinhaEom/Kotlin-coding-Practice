@@ -1,14 +1,9 @@
 class Solution {
     fun solution(s: String): String {
-        var words = s.split(" ")
-        var answer = words.map{word ->
-        if(word.isNotEmpty()){
-            word.lowercase().replaceFirstChar{it.uppercase()}
-        }else{
-            word
-        }
+        var answer = ""
         
-        }
-        return answer.joinToString(" ")
+        return s.split(" ").map { word ->
+            word.lowercase().replaceFirstChar{ it.uppercase()}
+        }.joinToString(" ")
     }
 }
