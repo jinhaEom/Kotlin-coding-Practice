@@ -1,19 +1,18 @@
 function solution(nums) {
-    var answer = 0;
-    let map = new Map()
-    const totalCount = nums.length/2
+    var answer = new Map();
+    const numLen = nums.length /2;
     
     for(const num of nums){
-        if(map.has(num)){
-            map.set(num,map.get(num)+1)
+        if(answer.get(num) === 0){
+          answer.set(num,answer.get(num)+1)
+            console.log(answer)
         }else{
-            map.set(num,1)
+          answer.set(num,1)
         }
     }
-    if(map.size < totalCount){
-        return map.size
+    if(answer.size < nums.length/2){
+        return answer.size
     }else{
-        return totalCount
+        return nums.length/2
     }
-    
 }
