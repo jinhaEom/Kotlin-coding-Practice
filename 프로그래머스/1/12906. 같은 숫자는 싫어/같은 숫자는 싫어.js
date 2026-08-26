@@ -1,13 +1,12 @@
-function solution(arr){
-    const result = [];
-    
-    for(let i = 0; i< arr.length; i++){
-        const current = arr[i]
-        const next = arr[i+1]
-        
-        if(current !== next){
-            result.push(current)
+function solution(arr)
+{
+    var answer = [];
+
+    for(const i of arr){
+        if(i !== answer[answer.length -1]){
+            answer.push(i)
         }
     }
-    return result
+    
+    return answer;
 }
